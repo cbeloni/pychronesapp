@@ -12,10 +12,10 @@
 
                     <form action="{{ save_path }}" method="post" role="form">
                         {{ csrf_input() }}
-                        {{ form_input(_('Price'),'price',chamado.price,errors.price) }}
+                        {{ form_input(_('Chamado'),'chamado',chamado.chamado,errors.chamado) }}
                         {{ form_input(_('Empresa'),'empresa',chamado.empresa,errors.empresa) }}
-                        {{ form_input(_('Start Date'),'start_date',chamado.start_date,errors.start_date) }}
-                        {{ form_input(_('Name'),'name',chamado.name,errors.name) }}
+                        {{ form_input(_('Tempo Desenvolvimento'),'tempo_dev',chamado.tempo_dev,errors.tempo_dev) }}
+                        {{ form_input(_('Tipo Chamado'),'tipo',chamado.tipo,errors.tipo) }}
                         {{ form_input(_('Ordem'),'id_ordem',chamado.id_ordem,errors.id_ordem) }}
                         <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
                     </form>

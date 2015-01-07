@@ -12,11 +12,16 @@ class ChamadoSaveForm(ModelForm):
     Form used to save and update Chamado
     """
     _model_class = Chamado
-    _include = [Chamado.empresa, 
-                Chamado.price, 
-                Chamado.start_date, 
-                Chamado.name,
-                Chamado.id_ordem]
+    _include = [Chamado.empresa,
+                Chamado.start_date,
+                Chamado.id_ordem,
+                Chamado.end_date,
+                Chamado.tipo,
+                Chamado.status,
+                Chamado.responsavel,
+                Chamado.chamado,
+                Chamado.tempo_dev]
+                    
 
 class ChamadoForm(ModelForm):
     """

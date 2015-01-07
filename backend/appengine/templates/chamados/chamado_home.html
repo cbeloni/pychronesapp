@@ -12,13 +12,17 @@
                     <thead>
                     <tr>
                         <th/>
-                        <th>{% trans %}Id{% endtrans %}</th>
-                        <th>{% trans %}Empresa{% endtrans %}</th>
-                        <th>{% trans %}Creation{% endtrans %}</th>
-                        <th>{% trans %}Price{% endtrans %}</th>
-                        <th>{% trans %}Start Date{% endtrans %}</th>
-                        <th>{% trans %}Name{% endtrans %}</th>
-                        <th>{% trans %}Id Ordem{% endtrans %}</th>
+							<th>{% trans %}Id{% endtrans %}</th>
+							<th>{% trans %}Chamado{% endtrans %}</th>
+							<th>{% trans %}Empresa{% endtrans %}</th>
+							<th>{% trans %}Creation{% endtrans %}</th>
+							<th>{% trans %}Tempo Desenvolvimento{% endtrans %}</th>
+							<th>{% trans %}Data Ini.{% endtrans %}</th>
+							<th>{% trans %}Data Fim{% endtrans %}</th>
+							<th>{% trans %}Tipo{% endtrans %}</th>
+							<th>{% trans %}Status{% endtrans %}</th>
+							<th>{% trans %}Responsável{% endtrans %}</th>
+							<th>{% trans %}Ordem{% endtrans %}</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -28,13 +32,17 @@
                         	
                             <td><a href="{{ chamado.edit_path }}" class="btn btn-success btn-sm"><i
                                     class="glyphicon glyphicon-pencil"></i></a></td>   
-                            <td>{{ chamado.id }}</td>
-                            <td>{{ chamado.empresa }}</td>
-                            <td>{{ chamado.creation }}</td>
-                            <td>{{ chamado.price }}</td>
-                            <td>{{ chamado.start_date }}</td>
-                            <td>{{ chamado.name }}</td>
-                            <td>{{ chamado.id_ordem }}</td>
+								<td>{{ chamado.id }}</td>
+								<td>{{ chamado.chamado }}</td>
+								<td>{{ chamado.empresa }}</td>
+								<td>{{ chamado.creation }}</td>
+								<td>{{ chamado.tempo_dev }}</td>
+								<td>{{ chamado.start_date }}</td>
+								<td>{{ chamado.end_date }}</td>
+								<td>{{ chamado.tipo }}</td>
+								<td>{{ chamado.status }}</td>
+								<td>{{ chamado.responsavel }}</td>
+								<td>{{ chamado.id_ordem }}</td>
                             {% if chamado.id_ordem > '1' %}
                             <td>
                             	<form action="{{ chamado.mensagem_path }}" method="post"> 
@@ -75,7 +83,7 @@
                                 </form>                                
                             </td>
                             
-                            <td>{{ chamado.ultimo_id_ordem }}</td>
+
                         </tr>
                     {% endfor %}
                     </tbody>

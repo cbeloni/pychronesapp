@@ -12,13 +12,13 @@ from tekton.gae.middleware.redirect import RedirectResponse
 
 @login_not_required
 @no_csrf
-def index():
-    return TemplateResponse({'save_path': router.to_path(save)}, 'chamados/chamado_form.html')
+def index(ultimo_id_ordem):
+    return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form.html')
 
 @login_not_required
 @no_csrf
-def save(**chamado_properties):
-    cmd = chamado_facade.save_chamado_cmd(**chamado_properties)
+def save(ultimo_id_ordem,**chamado_properties):
+    cmd = chamado_facade.save_chamado_id_cmd(ultimo_id_ordem,**chamado_properties)
     try:
         cmd()
     except CommandExecutionException:

@@ -23,18 +23,17 @@ def index():
         chamado_dct = chamado_form.fill_with_model(chamado)    
         chamado_dct['edit_path'] = router.to_path(edit_path, chamado_dct['id'])
         chamado_dct['delete_path'] = router.to_path(delete_path, chamado_dct['id'])
-        chamado_dct['mensagem_path'] = router.to_path(mensagem_path, chamado_dct['id'])
         return chamado_dct
     
     localized_chamados = [localize_chamado(chamado) for chamado in chamados]
        
     if localized_chamados:
-        ultimo_id_ordem = (localized_chamados[-1])['id_ordem']
+        ultimo_id_ordem = (localized_chamados[-1])['id_ordem']        
     else:
-        ultimo_id_ordem = ''  
+        ultimo_id_ordem = '0'  
     
     context = {'chamados_localizados': localized_chamados,
-               'new_path': router.to_path(new),
+               'new_path': router.to_path(new,int(ultimo_id_ordem)+1),
                'ultimo_id_ordem': str(ultimo_id_ordem)}
     return TemplateResponse(context, 'chamados/chamado_home.html')
 
