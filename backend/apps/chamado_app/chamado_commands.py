@@ -39,7 +39,8 @@ class ListChamadoCommand(ModelSearchCommand):
     def __init__(self):
         super(ListChamadoCommand, self).__init__(Chamado.query_by_id_ordem())
 
-class ObtemUltimoIdOrdem(ModelSearchCommand):
-    def __init__(self):
-        super(ObtemUltimoIdOrdem, self).__init__(Chamado.query_ultimo_id_ordem())        
+class ListChamadoWhereIdOrdem(ModelSearchCommand):
+    def __init__(self,id_ordem):
+#        print (id_ordem)
+        super(ListChamadoWhereIdOrdem, self).__init__(Chamado.query_by_where_id_ordem(id_ordem))        
 

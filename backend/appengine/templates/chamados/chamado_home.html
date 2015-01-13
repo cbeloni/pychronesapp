@@ -16,7 +16,7 @@
 							<th>{% trans %}Chamado{% endtrans %}</th>
 							<th>{% trans %}Empresa{% endtrans %}</th>
 							<th>{% trans %}Creation{% endtrans %}</th>
-							<th>{% trans %}Tempo Desenvolvimento{% endtrans %}</th>
+							<th>{% trans %}Tempo Dev.{% endtrans %}</th>
 							<th>{% trans %}Data Ini.{% endtrans %}</th>
 							<th>{% trans %}Data Fim{% endtrans %}</th>
 							<th>{% trans %}Tipo{% endtrans %}</th>
@@ -45,14 +45,14 @@
 								<td>{{ chamado.id_ordem }}</td>
                             {% if chamado.id_ordem > '1' %}
                             <td>
-                            	<form action="{{ chamado.mensagem_path }}" method="post"> 
+                            	<form action="{{ chamado.priorizar_path }}" method="post"> 
                                               {{ csrf_input() }}
                                     <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
                                 </form>
                             </td>
                             {% else %}
 	                            <td>
-		                            <form action="{{ chamado.mensagem_path }}" method="post"> 
+		                            <form action="{{ chamado.priorizar_path }}" method="post"> 
 	                                              {{ csrf_input() }}
 	                                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-minus-sign"></i></button>
 	                                </form>
@@ -61,14 +61,14 @@
                             
                             {% if chamado.id_ordem != ultimo_id_ordem %}
                             <td>
-                            	<form action="{{ chamado.mensagem_path }}" method="post"> 
+                            	<form action="{{ chamado.postergar_path }}" method="post"> 
                                               {{ csrf_input() }}
                                     <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
                                 </form>
                             </td>
 							{% else %}
 	                            <td>
-		                            <form action="{{ chamado.mensagem_path }}" method="post"> 
+		                            <form action="{{ chamado.postergar_path }}" method="post"> 
 	                                              {{ csrf_input() }}
 	                                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-minus-sign"></i></button>
 	                                </form>

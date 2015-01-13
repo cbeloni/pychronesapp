@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from gaegraph.business_base import NodeSearch, DeleteNode
-from chamado_app.chamado_commands import ListChamadoCommand, SaveChamadoCommand, UpdateChamadoCommand, ChamadoForm, ObtemUltimoIdOrdem
+from chamado_app.chamado_commands import ListChamadoCommand, SaveChamadoCommand, UpdateChamadoCommand, ChamadoForm, ListChamadoWhereIdOrdem
 
 
 def save_chamado_cmd(**chamado_properties):
@@ -64,11 +64,9 @@ def delete_chamado_cmd(chamado_id):
     """
     return DeleteNode(chamado_id)
 
-def obtem_ultimo_id_ordem():
+def get_chamado_where_id_ordem(id_ordem):
     """
-    Construct a command to delete a Chamado
-    :param chamado_id: chamado's id
-    :return: Command
+    todo
     """
-    return ObtemUltimoIdOrdem()
+    return ListChamadoWhereIdOrdem(id_ordem)
 
