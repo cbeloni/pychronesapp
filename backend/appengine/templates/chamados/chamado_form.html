@@ -16,6 +16,7 @@
                         {{ form_input(_('Empresa'),'empresa',chamado.empresa,errors.empresa) }}
                         {{ form_input(_('Tempo Desenvolvimento'),'tempo_dev',chamado.tempo_dev,errors.tempo_dev) }}
                         {{ form_input(_('Tipo Chamado'),'tipo',chamado.tipo,errors.tipo) }}
+                        {{ form_input(_('Data Inicial'),'start_date',chamado.start_date,errors.start_date) }}
                         {{ form_input(_('Ordem'),'id_ordem',chamado.id_ordem,errors.id_ordem) }}
                         <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
                     </form>

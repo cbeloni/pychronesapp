@@ -3,7 +3,6 @@ from __future__ import absolute_import, unicode_literals
 from gaegraph.business_base import NodeSearch, DeleteNode
 from chamado_app.chamado_commands import ListChamadoCommand, SaveChamadoCommand, UpdateChamadoCommand, ChamadoForm, ListChamadoWhereIdOrdem
 
-
 def save_chamado_cmd(**chamado_properties):
     """
     Command to save Chamado entity
@@ -18,7 +17,6 @@ def save_chamado_id_cmd(ultimo_id_ordem,**chamado_properties):
     :param chamado_properties: a dict of properties to save on model
     :return: a Command that save Chamado, validating and localizing properties received as strings
     """
-    chamado_properties['id_ordem'] = int(ultimo_id_ordem)
     return SaveChamadoCommand(**chamado_properties)
 
 def update_chamado_cmd(chamado_id, **chamado_properties):

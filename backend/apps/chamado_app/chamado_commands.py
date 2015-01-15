@@ -41,6 +41,5 @@ class ListChamadoCommand(ModelSearchCommand):
 
 class ListChamadoWhereIdOrdem(ModelSearchCommand):
     def __init__(self,id_ordem):
-#        print (id_ordem)
         super(ListChamadoWhereIdOrdem, self).__init__(Chamado.query_by_where_id_ordem(id_ordem))        
 

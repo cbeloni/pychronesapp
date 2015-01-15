@@ -28,8 +28,6 @@ class Chamado(Node):
 
     @classmethod
     def query_by_where_id_ordem(cls,id_ordem):  
-        print ("dentro da query")
-        print (id_ordem)  
         return cls.query(ndb.GenericProperty('id_ordem') == int(id_ordem)).order(cls.id_ordem)
 
 
