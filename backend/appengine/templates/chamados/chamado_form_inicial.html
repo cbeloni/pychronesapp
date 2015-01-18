@@ -16,9 +16,10 @@
                         {{ form_input(_('Chamado'),'chamado',chamado.chamado,errors.chamado) }}
                         {{ form_input(_('Empresa'),'empresa',chamado.empresa,errors.empresa) }}
                         {{ form_input(_('Tempo Desenvolvimento'),'tempo_dev',chamado.tempo_dev,errors.tempo_dev) }}
-                        {{ form_input(_('Tipo Chamado'),'tipo',chamado.tipo,errors.tipo) }}
-                        {{ form_input(_('Status'),'tipo',chamado.status,errors.status) }}
-                        {{ form_input(_('Responsável'),'responsavel',chamado.responsavel,errors.responsavel) }}
+                        {{ form_input(_('Tipo Chamado'),'tipo',chamado.tipo,errors.tipo) }} 
+                        {{ form_input(_('Status'),'status',chamado.status,errors.status) }}
+                        {{ form_input(_('Responsavel'),'responsavel',chamado.responsavel,errors.responsavel) }}                       
+                        {{ form_input(_('Data Inicial'),'start_date',chamado.start_date,errors.start_date) }}
                         <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
                     </form>
                 </div>

@@ -13,7 +13,10 @@ from tekton.gae.middleware.redirect import RedirectResponse
 @login_not_required
 @no_csrf
 def index(ultimo_id_ordem):
-    return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form.html')
+    if ultimo_id_ordem != '1':
+        return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form.html')
+    else:
+        return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form_inicial.html')
 
 @login_not_required
 @no_csrf
@@ -30,6 +33,6 @@ def save(ultimo_id_ordem,**chamado_properties):
         context = {'errors': cmd.errors,
                    'chamado': chamado_properties}
 
-        return TemplateResponse(context, 'chamados/chamado_form.html')
+        return TemplateResponse(context, 'chamados/chamado_form_inicial.html')
     return RedirectResponse(router.to_path(chamados))
 
