@@ -14,7 +14,7 @@ from tekton.gae.middleware.redirect import RedirectResponse
 @no_csrf
 def index(ultimo_id_ordem):
     if ultimo_id_ordem != '1':
-        return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form.html')
+        return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form_sem_id.html')
     else:
         return TemplateResponse({'save_path': router.to_path(save, ultimo_id_ordem)}, 'chamados/chamado_form_inicial.html')
 
