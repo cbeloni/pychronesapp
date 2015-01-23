@@ -1,1 +1,1 @@
-/home/beloni/pyDevWorkspace/PyChronesapp/backend/venv/venv.sh
+/home/beloni/Documentos/GoogleAppEngine/pychronesapp/backend/venv/venv.sh

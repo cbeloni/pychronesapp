@@ -3,11 +3,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>{% trans %}This is a generic home for chamado_app {% endtrans %}  </h1>
-                	<a href="{{ new_path }}" class="btn btn-success">{% trans %}Create New Chamado{% endtrans %}</a>
+                <h1>{% trans %}This is a generic home for course_app {% endtrans %}  </h1>
+                <a href="{{ new_path }}" class="btn btn-success">{% trans %}Create New Course{% endtrans %}</a>
                 <hr/>
-
-                <h2>{% trans %}List of Chamados{% endtrans %}</h2>
+                <h2>{% trans %}List of Courses{% endtrans %}</h2>
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
@@ -25,11 +24,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for chamado in chamados_localizados %}
+                    {% for chamado in chamados %}
                         <tr>
-                        	
                             <td><a href="{{ chamado.edit_path }}" class="btn btn-success btn-sm"><i
-                                    class="glyphicon glyphicon-pencil"></i></a></td>   
+                                    class="glyphicon glyphicon-pencil"></i></a></td>
 								<td>{{ chamado.chamado }}</td>
 								<td>{{ chamado.empresa }}</td>
 								<td>{{ chamado.tempo_dev }}</td>
@@ -39,7 +37,7 @@
 								<td>{{ chamado.status }}</td>
 								<td>{{ chamado.responsavel }}</td>
 								<td>{{ chamado.id_ordem }}</td>
-                            {% if chamado.id_ordem > '1' %}
+							{% if chamado.id_ordem > '1' %}
                             <td>
                             	<form action="{{ chamado.priorizar_path }}" method="post"> 
                                               {{ csrf_input() }}
@@ -48,14 +46,9 @@
                             </td>
                             {% else %}
 	                            <td>
-		                            <form action="{{ chamado.priorizar_path }}" method="post"> 
-	                                              {{ csrf_input() }}
-	                                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-minus-sign"></i></button>
-	                                </form>
 	                            </td>
                             {% endif %}
-                            
-                            {% if chamado.id_ordem != ultimo_id_ordem %}
+                            {% if chamado.id_ordem != len_chamados|string %}
                             <td>
                             	<form action="{{ chamado.postergar_path }}" method="post"> 
                                               {{ csrf_input() }}
@@ -64,22 +57,15 @@
                             </td>
 							{% else %}
 	                            <td>
-		                            <form action="{{ chamado.postergar_path }}" method="post"> 
-	                                              {{ csrf_input() }}
-	                                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-minus-sign"></i></button>
-	                                </form>
 	                            </td>
-                            {% endif %}
-                            
+                            {% endif %}	
                             <td>
                                 <form action="{{ chamado.delete_path }}" method="post" onsubmit="return confirm('{{_('Are you sure to delete? Press cancel to avoid deletion.')}}');">
                                     {{ csrf_input() }}
                                     <button class="btn btn-danger btn-sm"><i
                                             class="glyphicon glyphicon-trash"></i></button>
-                                </form>                                
+                                </form>
                             </td>
-                            
-
                         </tr>
                     {% endfor %}
                     </tbody>

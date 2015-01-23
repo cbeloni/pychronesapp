@@ -32,7 +32,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/beloni/pyDevWorkspace/PyChronesapp/backend/venv"
+set -gx VIRTUAL_ENV "/home/beloni/Documentos/GoogleAppEngine/pychronesapp/backend/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

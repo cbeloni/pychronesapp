@@ -1,1 +1,1 @@
-/home/beloni/pyDevWorkspace/PyChronesapp/backend/venv/venv.bat
+/home/beloni/Documentos/GoogleAppEngine/pychronesapp/backend/venv/venv.bat

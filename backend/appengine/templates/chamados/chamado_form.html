@@ -8,9 +8,8 @@
                 <br/>
 
                 <div class="well">
-                    <h1 class="text-center">{% trans %}Chamado Form{% endtrans %}</h1>
-					
-					
+                    <h1 class="text-center">{% trans %}Course Form{% endtrans %}</h1>
+
                     <form action="{{ save_path }}" method="post" role="form">
                         {{ csrf_input() }}
                         {{ form_input(_('Chamado'),'chamado',chamado.chamado,errors.chamado) }}
@@ -19,6 +18,9 @@
                         {{ form_input(_('Tipo Chamado'),'tipo',chamado.tipo,errors.tipo) }}
                         {{ form_input(_('Status'),'status',chamado.status,errors.status) }}
                         {{ form_input(_('Responsável'),'responsavel',chamado.responsavel,errors.responsavel) }}
+                        {% if len_chamados|int == 0 %}                        
+                        	{{ form_input(_('Data Inicial - máscara exemplo: Qui 14-08-2014 08:30'),'start_date',chamado.start_date,errors.start_date) }}
+                        {% endif %}
                         {{ form_input(_('Id Ordem'),'id_ordem',chamado.id_ordem,errors.id_ordem) }}
                         <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
                     </form>

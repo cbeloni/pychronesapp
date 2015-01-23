@@ -4,7 +4,7 @@ from gaebusiness.business import CommandExecutionException
 from gaecookie.decorator import no_csrf
 from gaepermission.decorator import login_not_required
 from tekton.gae.middleware.json_middleware import JsonResponse
-from chamado_app import chamado_facade
+from chamado_app import chamado_facade # @UnresolvedImport
 
 @login_not_required
 @no_csrf
@@ -30,7 +30,6 @@ def edit(_resp, chamado_id, **chamado_properties):
 @login_not_required
 @no_csrf
 def delete(chamado_id):
-    print ("Tô por aqui")
     chamado_facade.delete_chamado_cmd(chamado_id)()
 
 @login_not_required

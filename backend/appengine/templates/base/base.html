@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Agenda DBA{% endblock %}</title>
+    <title>{% block title %}Tekton Fullstrack{% endblock %}</title>
     <!-- Bootstrap -->
 
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,6 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {% macro select_tab(tab='') %}
-
                     <li {{ 'class=active' if tab=='CHAMADOS' }}><a href="/chamados">{% trans %}Chamados{% endtrans %}</a>
                     </li>
                     {% if _logged_user and 'ADMIN' in _logged_user.groups %}
@@ -97,7 +96,7 @@
 {% block body %}{% endblock %}
 <div class="footer">
     <div class="container">
-        <p class="text-muted text-right">Tekton Full-Stack: <a target="_blank"
+        <p class="text-muted text-right">Developed by Cauê Beloni - Tekton Full-Stack: <a target="_blank"
                                                                href="https://github.com/renzon/tekton-fullstack">Git
             Hub</a></p>
     </div>

@@ -2,6 +2,8 @@
 from __future__ import absolute_import, unicode_literals
 from google.appengine.ext import ndb
 from gaegraph.model import Node
+#from gaeforms.ndb import property
+
 
 class Chamado(Node):
     empresa = ndb.StringProperty(required=True)
@@ -28,6 +30,4 @@ class Chamado(Node):
 
     @classmethod
     def query_by_where_id_ordem(cls,id_ordem):  
-        return cls.query(ndb.GenericProperty('id_ordem') == int(id_ordem)).order(cls.id_ordem)
-
-
+        return cls.query(getattr(cls, 'id_ordem') == int(id_ordem)).order(cls.id_ordem)

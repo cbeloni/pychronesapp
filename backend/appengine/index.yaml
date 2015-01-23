@@ -35,16 +35,4 @@ indexes:
 - kind: Node
   properties:
   - name: class
-  - name: empresa
   - name: id_ordem
-
-- kind: Node
-  properties:
-  - name: class
-  - name: id_ordem
-
-- kind: Node
-  properties:
-  - name: class
-  - name: id_ordem
-    direction: desc

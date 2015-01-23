@@ -9,7 +9,7 @@ call Scripts\activate || goto :error
 
 call :to_console "Checking up dependencies"
 
-pip install -r dev_requirements.txt --upgrade || goto :error 
+pip --proxy caue.beloni:sonda21@proxy.sondait.com.br:3128 install -r dev_requirements.txt --upgrade || goto :error 
 
 
 cd ..\appengine || goto :error

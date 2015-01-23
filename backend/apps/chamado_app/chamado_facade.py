@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from gaegraph.business_base import NodeSearch, DeleteNode
-from chamado_app.chamado_commands import ListChamadoCommand, SaveChamadoCommand, UpdateChamadoCommand, ChamadoForm, ListChamadoWhereIdOrdem
+from chamado_app.chamado_commands import ListChamadoCommand, SaveChamadoCommand, UpdateChamadoCommand, ChamadoForm, ListChamadoWhereIdOrdem  # @UnresolvedImport
+
 
 def save_chamado_cmd(**chamado_properties):
     """
@@ -11,13 +12,6 @@ def save_chamado_cmd(**chamado_properties):
     """
     return SaveChamadoCommand(**chamado_properties)
 
-def save_chamado_id_cmd(ultimo_id_ordem,**chamado_properties):
-    """
-    Command to save Chamado entity
-    :param chamado_properties: a dict of properties to save on model
-    :return: a Command that save Chamado, validating and localizing properties received as strings
-    """
-    return SaveChamadoCommand(**chamado_properties)
 
 def update_chamado_cmd(chamado_id, **chamado_properties):
     """
@@ -25,7 +19,6 @@ def update_chamado_cmd(chamado_id, **chamado_properties):
     :param chamado_properties: a dict of properties to update model
     :return: a Command that update Chamado, validating and localizing properties received as strings
     """
-    
     return UpdateChamadoCommand(chamado_id, **chamado_properties)
 
 
@@ -54,6 +47,8 @@ def get_chamado_cmd(chamado_id):
     """
     return NodeSearch(chamado_id)
 
+
+
 def delete_chamado_cmd(chamado_id):
     """
     Construct a command to delete a Chamado
@@ -68,3 +63,10 @@ def get_chamado_where_id_ordem(id_ordem):
     """
     return ListChamadoWhereIdOrdem(id_ordem)
 
+def save_chamado_id_cmd(ultimo_id_ordem,**chamado_properties):
+    """
+    Command to save Chamado entity
+    :param chamado_properties: a dict of properties to save on model
+    :return: a Command that save Chamado, validating and localizing properties received as strings
+    """
+    return SaveChamadoCommand(**chamado_properties)

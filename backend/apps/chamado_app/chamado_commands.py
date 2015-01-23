@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-from gaebusiness.gaeutil import SaveCommand, ModelSearchCommand,SingleModelSearchCommand
+from gaebusiness.gaeutil import SaveCommand, ModelSearchCommand
 from gaeforms.ndb.form import ModelForm
 from gaegraph.business_base import UpdateNode
-from chamado_app.chamado_model import Chamado
-
+from chamado_app.chamado_model import Chamado  # @UnresolvedImport
 
 
 class ChamadoSaveForm(ModelForm):
@@ -21,7 +20,7 @@ class ChamadoSaveForm(ModelForm):
                 Chamado.responsavel,
                 Chamado.chamado,
                 Chamado.tempo_dev]
-                    
+
 
 class ChamadoForm(ModelForm):
     """
@@ -29,11 +28,16 @@ class ChamadoForm(ModelForm):
     """
     _model_class = Chamado
 
+
+
+
 class SaveChamadoCommand(SaveCommand):
     _model_form_class = ChamadoSaveForm
 
+
 class UpdateChamadoCommand(UpdateNode):
     _model_form_class = ChamadoSaveForm
+
 
 class ListChamadoCommand(ModelSearchCommand):
     def __init__(self):
@@ -41,5 +45,4 @@ class ListChamadoCommand(ModelSearchCommand):
 
 class ListChamadoWhereIdOrdem(ModelSearchCommand):
     def __init__(self,id_ordem):
-        super(ListChamadoWhereIdOrdem, self).__init__(Chamado.query_by_where_id_ordem(id_ordem))        
-
+        super(ListChamadoWhereIdOrdem, self).__init__(Chamado.query_by_where_id_ordem(id_ordem))     

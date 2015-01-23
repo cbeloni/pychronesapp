@@ -1,1 +1,1 @@
-/home/beloni/pyDevWorkspace/PyChronesapp/backend/venv/dev_requirements.txt
+/home/beloni/Documentos/GoogleAppEngine/pychronesapp/backend/venv/dev_requirements.txt
